@@ -7,7 +7,10 @@ class ListPage extends StatefulWidget {
   final String title;
 
   @override
-  State<ListPage> get createState => _ListPageState();
+  State<StatefulWidget> createState() {
+    return _ListPageState();
+  }
+ 
 }
 
 class _ListPageState extends State<ListPage> {

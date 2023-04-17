@@ -6,7 +6,9 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> get createState => _MyHomePageState();
+  State<StatefulWidget> createState() {
+    return _MyHomePageState();
+  }
 }
 
 class _MyHomePageState extends State<MyHomePage> {

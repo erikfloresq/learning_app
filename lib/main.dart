@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'learning_app.dart';
+import 'codelabs_app.dart';
 
 void main() {
-  runApp(const LearningApp());
+  runApp(CodeLabsApp());
 }
