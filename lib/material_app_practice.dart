@@ -41,9 +41,61 @@ class MyButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
             color: Colors.lightGreen[500]),
         child: Center(
-          child: Text('Hola!'),
+          child: MyLiveButton(),
         ),
       ),
     );
+  }
+}
+
+class MyLiveButton extends StatefulWidget {
+  @override
+  State<MyLiveButton> createState() => _MyLiveButtonState();
+}
+
+class _MyLiveButtonState extends State<MyLiveButton> {
+  int _counter = 0;
+
+  void increment() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        CounterIncrementor(onPressed: increment),
+        SizedBox(
+          width: 16,
+        ),
+        CounterDisplay(
+          count: _counter,
+        )
+      ],
+    );
+  }
+}
+
+class CounterDisplay extends StatelessWidget {
+  const CounterDisplay({required this.count, super.key});
+
+  final int count;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Counter: $count');
+  }
+}
+
+class CounterIncrementor extends StatelessWidget {
+  const CounterIncrementor({required this.onPressed, super.key});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: onPressed, child: Text('Increment'));
   }
 }
