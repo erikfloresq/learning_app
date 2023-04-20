@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'hello_world_app.dart';
+import 'material_app_practice.dart';
 
 void main() {
-  runApp(HelloWorldApp());
+  runApp(MaterialAppPractice());
 }
