@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'material_app_practice.dart';
+import 'preview_app.dart';
 
 void main() {
-  runApp(MaterialAppPractice());
+  runApp(PreviewApp());
 }
