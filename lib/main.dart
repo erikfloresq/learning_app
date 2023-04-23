@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'preview_app.dart';
+import 'package:learning_app/preview_app.dart';
 
 void main() {
   runApp(PreviewApp());

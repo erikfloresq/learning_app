@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'bring_all_together.dart';
+import 'examples/layout_examples.dart';
 
 class PreviewApp extends StatelessWidget {
   @override
@@ -8,17 +8,10 @@ class PreviewApp extends StatelessWidget {
       title: 'PreviewApp',
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Preview App'),
+          title: Image.asset('images/bp_logo.png', width: 200, height: 100),
+          backgroundColor: Color.fromARGB(255, 0, 0, 0),
         ),
-        body: Center(
-          child: ShoppingList(
-            products: [
-              Product(name: 'Eggs'),
-              Product(name: 'Flour'),
-              Product(name: 'Chocolate chips'),
-            ],
-          ),
-        ),
+        body: LayoutExamples(),
       ),
     );
   }
