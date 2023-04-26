@@ -6,8 +6,61 @@ class LayoutExamples extends StatelessWidget {
     return Center(
         child: Padding(
       padding: const EdgeInsets.all(8.0),
-      child: ListIdol(),
+      child: StackDemo(),
     ));
+  }
+}
+
+class MaterialCardDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return _buildCard();
+  }
+
+  Widget _buildCard() {
+    return SizedBox(
+      height: 210,
+      child: Card(
+        child: Column(
+          children: [
+            ListTile(
+              title: Text(
+                'DEMO',
+                style: TextStyle(fontSize: 20),
+              ),
+              subtitle: Text('Subtitle in card'),
+              leading: Image.asset('images/pic0.jpg'),
+            ),
+            ListTile(
+              title: Text(
+                'DEMO',
+                style: TextStyle(fontSize: 20),
+              ),
+              subtitle: Text('Subtitle in card'),
+              leading: Image.asset('images/pic0.jpg'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class StackDemo extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Center(child: Image.asset('images/pic0.jpg')),
+        Center(
+          child: Container(
+            height: 50,
+            decoration: BoxDecoration(color: Colors.black38),
+            child: Text('Demo'),
+          ),
+        )
+      ],
+    );
   }
 }
 
@@ -74,8 +127,8 @@ class Idols extends StatelessWidget {
   }
 }
 
-class Card extends StatelessWidget {
-  const Card({required this.name, required this.photo, super.key});
+class CardLocal extends StatelessWidget {
+  const CardLocal({required this.name, required this.photo, super.key});
 
   final String name;
   final String photo;
