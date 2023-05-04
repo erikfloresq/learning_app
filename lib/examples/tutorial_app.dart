@@ -32,11 +32,7 @@ class TutorialApp extends StatelessWidget {
             ],
           ),
         ),
-        Icon(
-          Icons.star,
-          color: Colors.red[500],
-        ),
-        Text('41')
+        FavoriteWidget()
       ],
     ),
   );
@@ -98,5 +94,49 @@ class TutorialApp extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class FavoriteWidget extends StatefulWidget {
+  @override
+  State<FavoriteWidget> createState() => _FavoriteWidgetState();
+}
+
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          padding: EdgeInsets.all(0),
+          alignment: Alignment.centerRight,
+          onPressed: _toggleFavorite,
+          icon: (_isFavorited ? Icon(Icons.star) : Icon(Icons.star_border)),
+          color: Colors.red[500],
+        ),
+        SizedBox(
+          width: 18,
+          child: SizedBox(
+            child: Text('$_favoriteCount'),
+          ),
+        )
+      ],
+    );
+  }
+
+  void _toggleFavorite() {
+    setState(() {
+      if (_isFavorited) {
+        _favoriteCount -= 1;
+        _isFavorited = false;
+      } else {
+        _favoriteCount += 1;
+        _isFavorited = true;
+      }
+    });
   }
 }
